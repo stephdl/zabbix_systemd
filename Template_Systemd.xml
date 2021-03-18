@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>5.0</version>
-    <date>2020-12-03T22:56:47Z</date>
+    <date>2021-03-18T22:56:47Z</date>
     <groups>
         <group>
             <name>Templates/Modules</name>
@@ -9,8 +9,8 @@
     </groups>
     <templates>
         <template>
-            <template>Template Module Linux systemd by Zabbix agent 2</template>
-            <name>Template Module Linux systemd by Zabbix agent 2</name>
+            <template>Template Module NethServer systemd by Zabbix agent 2</template>
+            <name>Template Module NethServer systemd by Zabbix agent 2</name>
             <groups>
                 <group>
                     <name>Templates/Modules</name>
@@ -36,7 +36,7 @@
                             </condition>
                             <condition>
                                 <macro>{#UNIT.NAME}</macro>
-                                <value>systemd-timesyncd.service|systemd-fsck-root.service|rsync.service</value>
+                                <value>microcode.service|systemd-timesyncd.service|systemd-fsck-root.service|^rhel-*|^systemd-readahead-*|udisks2.service|nethserver-system-init.service|nethserver-config-network.service</value>
                                 <operator>NOT_MATCHES_REGEX</operator>
                                 <formulaid>B</formulaid>
                             </condition>
@@ -77,7 +77,7 @@ Path: {#UNIT.PATH}</description>
                                     <expression>{last()}&lt;&gt;1</expression>
                                     <name>Service {#UNIT.NAME} is not running!</name>
                                     <opdata>Service current state: {ITEM.LASTVALUE}</opdata>
-                                    <priority>WARNING</priority>
+                                    <priority>HIGH</priority>
                                     <description>Description: {#UNIT.DESCRIPTION}&#13;
 Path: {#UNIT.PATH}</description>
                                 </trigger_prototype>
