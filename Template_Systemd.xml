@@ -36,7 +36,7 @@
                             </condition>
                             <condition>
                                 <macro>{#UNIT.NAME}</macro>
-                                <value>microcode.service|systemd-timesyncd.service|systemd-fsck-root.service|^rhel-*|^systemd-readahead-*|udisks2.service|nethserver-system-init.service|nethserver-config-network.service</value>
+                                <value>NetworkManager-wait-online.service|microcode.service|systemd-timesyncd.service|systemd-fsck-root.service|^rhel-*|^systemd-readahead-*|udisks2.service|nethserver-system-init.service|nethserver-config-network.service</value>
                                 <operator>NOT_MATCHES_REGEX</operator>
                                 <formulaid>B</formulaid>
                             </condition>
